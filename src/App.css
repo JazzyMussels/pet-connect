@@ -1,8 +1,15 @@
-@font-face {
-    font-family: 'ostrich';
-    src: url('pet-connect/public/fonts/OstrichSans-Heavy.otf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('ostrich.woff2') format('woff2'), /* Super Modern Browsers */
-    url('ostrich.woff') format('woff'), /* Pretty Modern Browsers */
-    url('ostrich.otf')  format('opentype'), /* Safari, Android, iOS */
-    url('ostrich.svg#svgFontName') format('svg'); /* Legacy iOS */
- }
+/* @font-face {
+    font-family: 'Ostrich Sans';
+    src: local('Ostrich Sans'), url(./fonts/OstrichSans-Heavy.otf) format('opentype');
+  } */
+
+ nav.navbar.navbar-expand.navbar-dark.bg-dark {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+.navbar-brand {
+    flex-basis: 90%;
+}
