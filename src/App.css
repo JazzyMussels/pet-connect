@@ -1,22 +1,8 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
+@font-face {
+    font-family: 'ostrich';
+    src: url('pet-connect/public/fonts/OstrichSans-Heavy.otf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('ostrich.woff2') format('woff2'), /* Super Modern Browsers */
+    url('ostrich.woff') format('woff'), /* Pretty Modern Browsers */
+    url('ostrich.otf')  format('opentype'), /* Safari, Android, iOS */
+    url('ostrich.svg#svgFontName') format('svg'); /* Legacy iOS */
+ }
