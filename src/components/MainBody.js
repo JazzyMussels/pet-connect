@@ -9,8 +9,7 @@ import Settings from './Settings'
 
 import {
     Switch,
-    Route,
-    Link
+    Route
   } from "react-router-dom";
 
 export default class MainBody extends Component {
@@ -24,13 +23,13 @@ export default class MainBody extends Component {
     render() {
         return(
             <Switch>
-                <Route path='/'><Login /></Route>
                 <Route path='/sign_up'><SignUp /></Route>
-                <Route path='/profile'><Profile /></Route>
+                <Route path='/profile'><Profile currentUser={this.props.currentUser}/></Route>
                 <Route path='/connect'><Connect /></Route>
                 <Route path='/matches'><Matches /></Route>
                 <Route path='/messages'><Messages /></Route>
                 <Route path='/settings'><Settings /></Route>
+                <Route path='/' render={(RouterProps) => <Login {...RouterProps} setUser={this.props.setUser} currentUser={this.props.currentUser}/>}/>
             </Switch>
         )
     }

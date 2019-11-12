@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Pane, Image, Button, Heading } from 'evergreen-ui'
+import { Pane, Image, Heading } from 'evergreen-ui'
 
 
 class Header extends Component {
