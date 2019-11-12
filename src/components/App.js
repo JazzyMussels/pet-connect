@@ -35,6 +35,7 @@ export default class App extends React.Component {
   render() {
     console.log("APPP", this.state);
     return (
+      <Router>
       <div className="App">
       <header className="App-header">
         <NavBar />
@@ -42,6 +43,7 @@ export default class App extends React.Component {
         <BrowserRouter><MainBody setUser={this.setUser}/></BrowserRouter>
       </header>
     </div>
+    </Router>
   );
 }
 }
