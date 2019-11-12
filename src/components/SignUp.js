@@ -1,5 +1,5 @@
 import React from 'react';
-const API = "http://localhost:3000/users";
+const API = "http://localhost:3000/signup";
 export default class App extends React.Component {
 
     state = {
