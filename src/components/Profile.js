@@ -9,6 +9,7 @@ export default class Profile extends Component {
     
     render(){
         let user = this.props.currentUser.user
+      
         return(
             <div>
                 <h1> Welcome Back, {user.first_name}!</h1>
@@ -26,9 +27,9 @@ export default class Profile extends Component {
                 <br></br>
             
             <div>
-                <MainPhoto />
-                <MainBar />
-                <OwnerBar/>
+                <MainPhoto currentUser={this.props.currentUser}/>
+                <MainBar currentUser={this.props.currentUser}/>
+                <OwnerBar currentUser={this.props.currentUser}/>
             </div>
         <br></br>
             </div>
