@@ -25,8 +25,8 @@ export default class MainBody extends Component {
         return(
             <Switch>
                 <Route path='/sign_up'><SignUp /></Route>
-                <Route path='/profile'><Profile currentUser={this.props.currentUser}/></Route>
-                <Route path='/connect'><Connect /></Route>
+                <Route path='/profile'> {this.props.currentUser ? <Profile currentUser={this.props.currentUser}/> : <div></div>}</Route>
+                <Route path='/connect'> {this.props.currentUser ? <Connect currentUser={this.props.currentUser}/> : <div></div>}</Route>
                 <Route path='/matches'><Matches /></Route>
                 <Route path='/messages'><Messages /></Route>
                 <Route path='/settings'><Settings currentUser={this.props.currentUser}/></Route>

@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from './NavBar'
 import Header from './Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
+import '../css/App.css'
 import MainBody from './MainBody';
 // import './fonts/OstrichSans-Heavy.otf'
 import { BrowserRouter} from 'react-router-dom';
