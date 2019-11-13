@@ -25,7 +25,7 @@ export default class App extends React.Component {
       })
       .then(resp => resp.json())
       .then(response => {
-          this.setUser(response.user)
+          this.setUser(response)
       })
     }
   }

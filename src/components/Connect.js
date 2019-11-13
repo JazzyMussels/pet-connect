@@ -1,6 +1,7 @@
 import React from 'react';
 import MainPhoto from './MainPhoto';
 import MainBar from './MainBar';
+
 class Connect extends React.Component {
     
     componentDidMount() {
@@ -12,6 +13,7 @@ class Connect extends React.Component {
             <div>
                 <MainPhoto />
                 <MainBar />
+                <button>NO</button><button>Yes</button>
             </div>
         );
     }

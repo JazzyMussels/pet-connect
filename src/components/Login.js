@@ -19,7 +19,7 @@ class Login extends React.Component {
         })
         .then(resp => resp.json())
         .then(response => {
-            this.props.setUser(response.user);
+            this.props.setUser(response);
             this.props.currentUser ?  this.props.history.push('/profile') : alert('bleh')
             localStorage.token = response.token;
         })

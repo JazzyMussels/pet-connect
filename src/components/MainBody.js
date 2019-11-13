@@ -28,8 +28,8 @@ export default class MainBody extends Component {
                 <Route path='/connect'><Connect /></Route>
                 <Route path='/matches'><Matches /></Route>
                 <Route path='/messages'><Messages /></Route>
-                <Route path='/settings'><Settings /></Route>
-                <Route path='/' render={(RouterProps) => <Login {...RouterProps} setUser={this.props.setUser} currentUser={this.props.currentUser}/>}/>
+                <Route path='/settings'><Settings currentUser={this.props.currentUser}/></Route>
+                <Route path='/' render={(RouterProps) => this.props.currentUser ? RouterProps.history.push('/profile') : <Login {...RouterProps} setUser={this.props.setUser} currentUser={this.props.currentUser}/>}/>
             </Switch>
         )
     }
