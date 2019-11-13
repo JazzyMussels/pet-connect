@@ -1,5 +1,6 @@
-import React from 'react';
+import React from 'react'
 const URLLOGIN ="http://localhost:3000/login"
+
 class Login extends React.Component {
     state = {
         username: "",
@@ -18,7 +19,8 @@ class Login extends React.Component {
         })
         .then(resp => resp.json())
         .then(response => {
-            this.props.setUser(response.user);
+            this.props.setUser(response);
+            this.props.currentUser ?  this.props.history.push('/profile') : alert('bleh')
             localStorage.token = response.token;
         })
     }
@@ -34,13 +36,11 @@ class Login extends React.Component {
                 <label>LOGIN</label><br></br>
                 <label> <input onChange={(event) =>this.handleInput(event)} value={this.state.username} type="text" name="username" /> </label>
                 <label> <input onChange={(event) =>this.handleInput(event)} type="password" name="password" /> </label>
-                <Link to='/profile/' render={() => <Profile />}>
                 <input type="submit" />
-                </Link>
             </form>
             <br></br>
             <p>Not a Member Yet? Sign Up Here</p>
-            <button onClick={(e) => this.goToSignUp(e)}>Sign Up!</button>
+            <button onClick={() => this.props.history.push('/sign_up')}>Sign Up!</button>
             </div>
         )
     }

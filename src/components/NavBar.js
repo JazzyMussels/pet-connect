@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
-import { Nav, Navbar, NavItem} from 'react-bootstrap';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import { Nav, Navbar} from 'react-bootstrap';
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     Link
+//   } from "react-router-dom";
 
 export default class NavBar extends Component {
 

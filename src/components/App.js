@@ -5,12 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import MainBody from './MainBody';
 // import './fonts/OstrichSans-Heavy.otf'
-import { BrowserRouter } from 'react-router-dom';
-
+import { BrowserRouter} from 'react-router-dom';
 const API ="http://localhost:3000/auto_login"
+
+
 export default class App extends React.Component {
   state = {
-    currentUser: null 
+    currentUser: null
   }
   
   componentDidMount () {
@@ -24,7 +25,7 @@ export default class App extends React.Component {
       })
       .then(resp => resp.json())
       .then(response => {
-          this.setUser(response.user)
+          this.setUser(response)
       })
     }
   }
@@ -36,15 +37,15 @@ export default class App extends React.Component {
   render() {
     console.log("APPP", this.state);
     return (
-      <Router>
+      <BrowserRouter>
       <div className="App">
       <header className="App-header">
-        <NavBar />
+        <NavBar currentUser={this.state.currentUser}/>
         <Header />
-        <BrowserRouter><MainBody setUser={this.setUser}/></BrowserRouter>
+        <MainBody setUser={this.setUser} currentUser={this.state.currentUser}/>
       </header>
     </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 }
