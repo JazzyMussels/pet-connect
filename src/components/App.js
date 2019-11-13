@@ -31,12 +31,10 @@ export default class App extends React.Component {
   }
 
   setUser = (user) => {
-    console.log("we're here", user)
     this.setState({currentUser: user})    // routes ? as second param maybe
   }
   
   render() {
-    console.log("APPP", this.state);
     return (
       <BrowserRouter>
       <div className="App">
