@@ -21,6 +21,7 @@ export default class MainBody extends Component {
         }
     }
     render() {
+        console.log(this.props.currentUser)
         return(
             <Switch>
                 <Route path='/sign_up'><SignUp /></Route>

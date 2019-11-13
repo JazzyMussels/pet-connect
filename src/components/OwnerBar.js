@@ -11,12 +11,16 @@ class OwnerBar extends React.Component {
         // console.log(userPhotos)
         return (
             <div>
-               <h1>{user.first_name}</h1>
-               <h2>{user.age}</h2>
-               <h3>Identifying as :{user.gender}, {user.orientation} </h3>
-               <h3>Seeking: {user.orientation}</h3>
+                <h1>Owner Info:</h1>
+               <h2>Name: {user.first_name}</h2>
+               <h2>Age: {user.age}</h2>
+               <h2>Job: {user.job}</h2>
+               <h3> I Identify as {user.gender} and I am {user.orientation} </h3>
+               <h3>What I look for in a person: Someone who is {user.seeking_human}</h3>
+               <h3>Animal my pet can interact with: {user.seeking_pet}</h3>
                <br></br>
-               <p>BIO</p>
+               <h3>About Me:</h3>
+               <p>{user.bio}</p>
             </div>
         );
     }

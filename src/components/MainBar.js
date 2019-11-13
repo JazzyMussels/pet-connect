@@ -4,6 +4,7 @@ class MainBar extends React.Component {
     render() {
         
         let pet = this.props.currentUser.pet
+        let user = this.props.currentUser.user
         // let userPhotos = this.props.currentUser.photos
 
         // console.log(user)
@@ -11,9 +12,12 @@ class MainBar extends React.Component {
         // console.log(userPhotos)
         return (
             <div>
-                <h4>XX Miles Away</h4>
+                <h3>Location : {user.location}</h3>
+                <h4> 1.5 Miles Away</h4>
                 <h4>I am a {pet.gender} {pet.species}</h4>
-               <h4>Bio</h4>
+                <br></br>
+                <h4>About Me</h4>
+               <p>{pet.bio}</p>
                <h5>Other Photos</h5>  
             </div>
         );

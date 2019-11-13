@@ -13,8 +13,8 @@ class MainPhoto extends React.Component {
         return (
             <div>
                <img src={userPhotos.source} alt='doggo'></img>
-               <h2>{pet.name}</h2>
-               <h3>{pet.age}</h3>
+               <h2>Name: {pet.name}</h2>
+               <h3>Age: {pet.age}</h3>
             </div>
         );
     }
