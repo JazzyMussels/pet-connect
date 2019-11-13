@@ -34,7 +34,7 @@ export default class App extends React.Component {
     console.log("we're here", user)
     this.setState({currentUser: user})    // routes ? as second param maybe
   }
-
+  
   render() {
     console.log("APPP", this.state);
     return (
