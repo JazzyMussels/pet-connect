@@ -10,17 +10,25 @@ import { Link } from 'react-router-dom';
 
 export default class NavBar extends Component {
 
+  onClick = () => {
+    localStorage.token = ''
+  }
+
 render() {
 return(
     <Navbar bg="light" variant="light">
     <Navbar.Brand href="#home">PetConnect</Navbar.Brand>
     <NavItem componentclass='span'>
-      <Link to="/sign_up">SignUp</Link>
       <Link to="/profile">Profile</Link>
       <Link to="/settings">Settings</Link>
       <Link to="/connect">Connect</Link>
       <Link to="/matches">Matches</Link>
       <Link to="/messages">Messages</Link>
+      {localStorage.token !== '' ? 
+      <Link onClick={this.onClick} to='/'>LogOut</Link>
+      :
+      <Link to='/'>LogIn</Link>
+      }
     </NavItem>
   </Navbar>
 )

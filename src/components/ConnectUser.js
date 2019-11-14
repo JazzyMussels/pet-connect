@@ -1,13 +1,11 @@
 import React from 'react';
-import MainPhoto from './MainPhoto';
-import MainBar from './MainBar';
+import ConnectMatchCards from './ConnectMatchCards'
 
 class ConnectUser extends React.Component {
     render() {
         return (
             <div>
-                <MainPhoto currentUser={this.props.currentUser}/>
-                <MainBar currentUser={this.props.currentUser}/>
+                <ConnectMatchCards cardOnDisplay={this.props.cardOnDisplay}/>
                 <button onClick={this.props.handleNextUser}>NO</button> <button>Yes</button> 
             </div>
         );

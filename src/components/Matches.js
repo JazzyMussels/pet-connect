@@ -1,19 +1,17 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import MatchCard from './MatchCard'
+import UserMatchCards from './UserMatchCards'
 
 export default class Matches extends Component {
 
     renderMatchCards = () => {
-        console.log(this.props.currentUserMatchees)
-        if(this.props.users) {
             return(
                 this.props.currentUserMatchees.map(match => {
-                    return <MatchCard key={match.id} matchee={this.props.users.get(match.id)}/>
+                    return <UserMatchCards key={match.id} matchee={this.props.otherUsers.get(match.id)}/>
                 })
             )
         }
-    }
+    
 
 
     render(){

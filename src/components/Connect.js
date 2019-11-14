@@ -4,14 +4,14 @@ import ConnectUser from './ConnectUser';
 class Connect extends React.Component {
 
     renderConnectUser = () => {
-        if (this.props.users.size > 0 && this.props.users.size-1 >= this.props.index) {
-            let user = this.props.users.get(this.props.index) 
-            if (user)
-                return <ConnectUser handleNextUser={this.props.handleNextUser} currentUser={user}/>
+        if (this.props.otherUsers.size > 0 && this.props.otherUsers.size - 1 >= this.props.matchIndex) {
+            let cardOnDisplay = this.props.otherUsers.get(this.props.matchIndex) 
+            if (cardOnDisplay)
+                return <ConnectUser handleNextUser={this.props.handleNextUser} cardOnDisplay={cardOnDisplay}/>
             else 
                 this.props.handleNextUser()
         }
-
+        
     }
 
     render() {

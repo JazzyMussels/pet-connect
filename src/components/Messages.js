@@ -1,15 +1,23 @@
 import React, {Component} from 'react'
+import MessageIcons from './MessageIcons'
 
 export default class Messages extends Component {
+
+    renderMatchIcons = () => {
+        return(
+            this.props.currentUserMatchees.map(match => {
+                return <MessageIcons key={match.id} matchee={this.props.otherUsers.get(match.id)}/>
+            })
+        )
+    }
+
     
     render(){
         return(
             <div>
                 <h1>Messages</h1>
                 <input type="text" className="input" placeholder="Search Matches" />
-                <h3>Photo Cards of matches you can click, maybe it's own component</h3>
-                    <h4>Name</h4>
-                    <h5>last message, click to open conversation</h5>
+                {this.renderMatchIcons()}                    
                 </div>
         )
     }
