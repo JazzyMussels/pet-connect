@@ -10,8 +10,7 @@ class Connect extends React.Component {
                 return <ConnectUser handleNextUser={this.props.handleNextUser} cardOnDisplay={cardOnDisplay}/>
             else 
                 this.props.handleNextUser()
-        }
-        
+        } 
     }
 
     render() {

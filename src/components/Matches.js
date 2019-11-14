@@ -11,8 +11,6 @@ export default class Matches extends Component {
                 })
             )
         }
-    
-
 
     render(){
         return(
