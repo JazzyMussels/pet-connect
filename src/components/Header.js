@@ -11,17 +11,17 @@ class Header extends Component {
           <Pane
               position='absolute'
               >
-            <Heading color='#cacf33' fontWeight='500px' fontSize='90px' marginTop='100px' marginLeft='610px'>PET CONNECT</Heading>
+            <Heading color='#cacf33' fontWeight='600' fontSize='90px' fontFamily= "Montserrat" marginTop='100px' marginLeft='610px'>PET CONNECT</Heading>
             </Pane>
 
             <Pane
             position='absolute'
             >
-            <Image marginTop='150px' marginLeft='860px' src={process.env.PUBLIC_URL + '/images/logo.png'}></Image>
+            <Image marginTop='80px' marginLeft='900px' src={process.env.PUBLIC_URL + '/images/logo.png'}></Image>
             </Pane>
 
         <Pane
-  height={765}
+  height='max'
   width='max'
   display="flex"
   alignItems="center"

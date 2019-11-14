@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/Login.css'
 const URLLOGIN ="http://localhost:3000/login"
 
 class Login extends React.Component {
@@ -31,16 +32,15 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-            <form onSubmit={this.handleSubmit}>
-                <label>LOGIN</label><br></br>
-                <label> <input onChange={(event) =>this.handleInput(event)} value={this.state.username} type="text" name="username" /> </label>
-                <label> <input onChange={(event) =>this.handleInput(event)} type="password" name="password" /> </label>
-                <input type="submit" />
-            </form>
-            <br></br>
-            <p>Not a Member Yet? Sign Up Here</p>
-            <button onClick={() => this.props.history.push('/sign_up')}>Sign Up!</button>
+            <div className="loginContainer">
+                <form className="loginForm" onSubmit={this.handleSubmit}>
+                    <label>LOGIN</label><br></br>
+                    <label> <input className="loginUsername" onChange={(event) =>this.handleInput(event)} value={this.state.username} type="text" name="username" /> </label>
+                    <label> <input className="loginPassword" onChange={(event) =>this.handleInput(event)} type="password" name="password" /> </label>
+                    <input className="loginSubmit" type="submit" value="Login"/>
+                </form>
+                <p>Not a Member Yet? Sign Up Here</p>
+                <button className="signup" onClick={() => this.props.history.push('/sign_up')}>Sign Up!</button>
             </div>
         )
     }

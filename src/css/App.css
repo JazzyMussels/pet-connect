@@ -3,20 +3,6 @@
     src: local('Ostrich Sans'), url(./fonts/OstrichSans-Heavy.otf) format('opentype');
   } */
 
- nav.navbar.navbar-expand.navbar-dark.bg-dark {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    font-family: 'Georgia';
-    
-}
-
-.navbar-nav span[role=button] {
-    padding: 15px;
-    display: inline-block;
-    line-height: 20px;
-  }
-
-.navbar-brand {
-    flex-basis: 90%;
+.App {
+  overflow:scroll;
 }

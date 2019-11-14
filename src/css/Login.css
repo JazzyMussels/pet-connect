@@ -1,0 +1,15 @@
+.loginContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-width: 5px;
+}
+
+input {
+    display: block
+}
+
+.signup{
+    display: block
+}

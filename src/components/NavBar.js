@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { NavItem, Navbar} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import "../css/NavBar.css"
 // import {
 //     BrowserRouter as Router,
 //     Switch,

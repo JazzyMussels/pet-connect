@@ -66,11 +66,9 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
       <div className="App">
-      <header className="App-header">
         <NavBar currentUser={this.state.currentUser} handleLogin={this.handleLogin} loggedIn={this.state.loggedIn}/>
         <Header />
         <MainBody setUser={this.setUser} currentUser={this.state.currentUser} handleNextUser={this.handleNextUser} otherUsers={this.state.otherUsers} matchIndex={this.state.index}/>
-      </header>
     </div>
     </BrowserRouter>
   );
