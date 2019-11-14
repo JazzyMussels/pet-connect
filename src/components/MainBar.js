@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/MainBar.css'
 
 class MainBar extends React.Component {
     render() {
@@ -11,7 +12,7 @@ class MainBar extends React.Component {
         // console.log(pet)
         // console.log(userPhotos)
         return (
-            <div>
+            <div className="PetInfoContainer">
                 <h3>Location : {user.location}</h3>
                 <h4> 1.5 Miles Away</h4>
                 <h4>I am a {pet.gender} {pet.species}</h4>

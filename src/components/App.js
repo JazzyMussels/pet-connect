@@ -4,7 +4,6 @@ import Header from './Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/App.css'
 import MainBody from './MainBody';
-// import './fonts/OstrichSans-Heavy.otf'
 import { BrowserRouter} from 'react-router-dom';
 const API ="http://localhost:3000/auto_login"
 const APIURL = "http://localhost:3000/connect"
@@ -66,8 +65,7 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
       <div className="App">
-        <NavBar currentUser={this.state.currentUser} handleLogin={this.handleLogin} loggedIn={this.state.loggedIn}/>
-        <Header />
+    {this.state.loggedIn ? <NavBar currentUser={this.state.currentUser} handleLogin={this.handleLogin} loggedIn={this.state.loggedIn}/> : <Header />}
         <MainBody setUser={this.setUser} currentUser={this.state.currentUser} handleNextUser={this.handleNextUser} otherUsers={this.state.otherUsers} matchIndex={this.state.index}/>
     </div>
     </BrowserRouter>

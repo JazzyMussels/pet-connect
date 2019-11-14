@@ -34,13 +34,11 @@ class Login extends React.Component {
         return (
             <div className="loginContainer">
                 <form className="loginForm" onSubmit={this.handleSubmit}>
-                    <label>LOGIN</label><br></br>
-                    <label> <input className="loginUsername" onChange={(event) =>this.handleInput(event)} value={this.state.username} type="text" name="username" /> </label>
-                    <label> <input className="loginPassword" onChange={(event) =>this.handleInput(event)} type="password" name="password" /> </label>
-                    <input className="loginSubmit" type="submit" value="Login"/>
+                    <input className="loginInput" required="true" id="loginUsername" onChange={(event) =>this.handleInput(event)} placeholder="username" value={this.state.username} type="text" name="username" />
+                    <input className="loginInput" required="true" id="loginPassword" onChange={(event) =>this.handleInput(event)} placeholder="password"type="password" name="password" />
+                    <input className="loginSubmit" type="submit" value="LOGIN"/>
                 </form>
-                <p>Not a Member Yet? Sign Up Here</p>
-                <button className="signup" onClick={() => this.props.history.push('/sign_up')}>Sign Up!</button>
+                <div id="bla" >Not a Member Yet?<span className="signup" onClick={() => this.props.history.push('/sign_up')}> Sign Up Here!</span></div>
             </div>
         )
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../css/OwnerBar.css'
 class OwnerBar extends React.Component {
     render() {
         let user = this.props.currentUser.user
@@ -10,7 +10,7 @@ class OwnerBar extends React.Component {
         // console.log(pet)
         // console.log(userPhotos)
         return (
-            <div>
+            <div className="OwnerContainer">
                 <h1>Owner Info:</h1>
                <h2>Name: {user.first_name}</h2>
                <h2>Age: {user.age}</h2>
