@@ -4,5 +4,8 @@
   } */
 
 .App {
-  overflow:scroll;
+  background-image: url('../images/woodBG.jpg');
+  background-size: cover;
+  /* height: 2300px; */
+  /* background-color: #222; */
 }

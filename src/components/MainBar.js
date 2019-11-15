@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/MainBar.css'
-
+import { Card, Icon, Image, Header, List, Button, Container } from 'semantic-ui-react'
 class MainBar extends React.Component {
     render() {
         
@@ -12,14 +12,13 @@ class MainBar extends React.Component {
         // console.log(pet)
         // console.log(userPhotos)
         return (
-            <div className="PetInfoContainer">
-                <h3>Location : {user.location}</h3>
+            <div className="PetInfoContainer">    
+                <p>Location : {user.location}</p>
                 <h4> 1.5 Miles Away</h4>
-                <h4>I am a {pet.gender} {pet.species}</h4>
+                <h4>{pet.gender} {pet.species}</h4>
                 <br></br>
-                <h4>About Me</h4>
-               <p>{pet.bio}</p>
-               <h5>Other Photos</h5>  
+                <p>About {pet.name}</p>
+               <h3>{pet.bio}</h3>        
             </div>
         );
     }

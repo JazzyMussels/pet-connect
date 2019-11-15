@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar'
-import Header from './Header'
+import SiteHeader from './SiteHeader'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/App.css'
 import MainBody from './MainBody';
@@ -12,8 +12,7 @@ export default class App extends React.Component {
   state = {
     currentUser: null,
     otherUsers : new Map(),
-    index: 1,
-    loggedIn: false
+    index: 1 
   }
   
   componentDidMount () {
@@ -26,25 +25,19 @@ export default class App extends React.Component {
         }
       })
       .then(resp => resp.json())
-      .then(data => {
-        this.setAllUsers(data);
-        this.handleLogin();
+      .then(response => {
+          this.setUser(response)
+        this.getOtherUsers()
       })
     }
   }
 
   handleNextUser = () => {
     this.setState((prevState) =>({index: prevState.index + 1}))
-  }
-
-  handleLogin = () => {
-    if (this.state.loggedIn) 
-      localStorage.token = "";
-    this.setState((prevState) =>({loggedIn: !prevState.loggedIn}))
-  }
+}
 
   setUser = (user) => {
-    this.setState({currentUser: user, loggedIn: true})    // routes ? as second param maybe
+    this.setState({currentUser: user})    // routes ? as second param maybe
   }
 
   setAllUsers = (data) => {
@@ -62,12 +55,14 @@ export default class App extends React.Component {
   }
   
   render() {
-    console.log("APP", this.state)
     return (
       <BrowserRouter>
       <div className="App">
-        {this.state.loggedIn ? <NavBar currentUser={this.state.currentUser} handleLogin={this.handleLogin} loggedIn={this.state.loggedIn}/> : <Header />}
-        <MainBody setUser={this.setUser} currentUser={this.state.currentUser} handleLogin={this.handleLogin} setAllUsers={this.setAllUsers} handleNextUser={this.handleNextUser} matchIndex={this.state.index}/>
+      <header className="App-header">
+        <NavBar currentUser={this.state.currentUser}/>
+      {this.state.currentUser ? <SiteHeader/> : null }
+        <MainBody setUser={this.setUser} currentUser={this.state.currentUser} handleNextUser={this.handleNextUser} otherUsers={this.state.otherUsers} matchIndex={this.state.index}/>
+      </header>
     </div>
     </BrowserRouter>
   );
