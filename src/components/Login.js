@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/Login.css'
-const URLLOGIN ="http://localhost:3000/login"
+const API ="http://localhost:3000/login"
 
 class Login extends React.Component {
     state = {
@@ -10,7 +10,7 @@ class Login extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch(URLLOGIN, {
+        fetch(API, {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",
@@ -20,12 +20,19 @@ class Login extends React.Component {
         })
         .then(resp => resp.json())
         .then(response => {
-            this.props.setUser(response);
-            this.props.currentUser ?  this.props.history.push('/profile') : alert('bleh')
-            localStorage.token = response.token;
+            if (response.errors) {
+                localStorage.token = "";
+                alert(response.errors);
+            }
+            else {
+                this.props.setAllUsers(response);
+                this.props.handleLogin()
+                this.props.history.push('/profile'); 
+                localStorage.token = response.token;
+            }
         })
     }
-
+    
     handleInput = (event) => {
         this.setState({[event.target.name]: event.target.value })
     }
@@ -34,8 +41,8 @@ class Login extends React.Component {
         return (
             <div className="loginContainer">
                 <form className="loginForm" onSubmit={this.handleSubmit}>
-                    <input className="loginInput" required="true" id="loginUsername" onChange={(event) =>this.handleInput(event)} placeholder="username" value={this.state.username} type="text" name="username" />
-                    <input className="loginInput" required="true" id="loginPassword" onChange={(event) =>this.handleInput(event)} placeholder="password"type="password" name="password" />
+                    <input className="loginInput" required={true} id="loginUsername" onChange={(event) =>this.handleInput(event)} placeholder="username" value={this.state.username} type="text" name="username" />
+                    <input className="loginInput" required={true} id="loginPassword" onChange={(event) =>this.handleInput(event)} placeholder="password"type="password" name="password" />
                     <input className="loginSubmit" type="submit" value="LOGIN"/>
                 </form>
                 <div id="bla" >Not a Member Yet?<span className="signup" onClick={() => this.props.history.push('/sign_up')}> Sign Up Here!</span></div>
