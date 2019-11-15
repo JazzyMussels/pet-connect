@@ -1,6 +1,18 @@
 .profileContainer{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
-    align-items: center;
+    /* align-items: right; */
+    background-image: url('../images/profileBG.png');
+    /* background-color: rgb(230, 223, 9); */
+    border: 10px;
+    width: 900px;
+    height: 1350px;
+    margin-left: 265px;
+    font-family: 'Caveat', cursive;
+    font-size: 170%
+}
+
+#Profile-head {
+    color: 'pink'
 }

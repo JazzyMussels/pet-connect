@@ -3,4 +3,11 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-left: 50px;
+    margin-top: -250px;
+    text-align: center;
+    width: 370px;
+    background-color: rgb(135, 206, 235, 0.5);
+    font-family: 'Caveat', cursive;
+    font-size: 120%
 }

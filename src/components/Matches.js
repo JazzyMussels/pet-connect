@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import UserMatchCards from './UserMatchCards'
+import '../css/Matches.css'
 
 export default class Matches extends Component {
 
@@ -14,11 +15,13 @@ export default class Matches extends Component {
 
     render(){
         return(
-            <div>
-                <h1>Your Current Matches</h1>
+            <div className='match-parent'>
+                <div className='match-search'>
+                <div>Your Current Matches</div>
                 <input type="text" className="input" placeholder="Search Matches" />
+                </div>
                 {this.renderMatchCards()}
-                <Link to='/connect'>NONE OF THESE WILL DO KEEP SWIPING</Link>
+                {/* <Link to='/connect'>NONE OF THESE WILL DO KEEP SWIPING</Link> */}
                 </div>
         )
     }
