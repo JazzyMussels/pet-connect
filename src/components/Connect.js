@@ -27,19 +27,15 @@ class Connect extends React.Component {
     }
 
     renderConnectUser = () => {
-        // return < ConnectUser currentUser={this.props.currentUser}/> works
-        if (this.state.users.size > 0 && this.state.users.size-1 >= this.state.index) {
-            let user = this.state.users.get(this.state.index) 
-            if (user)
-                return <ConnectUser handleNextUser={this.handleNextUser} currentUser={user}/>
+        if (this.props.otherUsers.size > 0 && this.props.otherUsers.size - 1 >= this.props.matchIndex) {
+            let cardOnDisplay = this.props.otherUsers.get(this.props.matchIndex) 
+            if (cardOnDisplay && this.props.currentUser.user.id !== cardOnDisplay.user.id && !this.props.currentUser.matchers.find(match => match.id === cardOnDisplay.user.id))
+                return <ConnectUser updateUser={this.props.updateUser} foundMatch={this.props.foundMatch} currentUser={this.props.currentUser} handleNextUser={this.props.handleNextUser} cardOnDisplay={cardOnDisplay}/>
             else 
-                this.handleNextUser()
+                this.props.handleNextUser();
         }
-
-    }
-
-    handleNextUser = () => {
-        this.setState((prevState) =>({index: prevState.index + 1}))
+        else 
+            this.props.handleNextUser(0); 
     }
 
     render() {

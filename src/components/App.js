@@ -7,7 +7,12 @@ import MainBody from './MainBody';
 // import './fonts/OstrichSans-Heavy.otf'
 import { BrowserRouter} from 'react-router-dom';
 const API ="http://localhost:3000/auto_login"
+<<<<<<< Updated upstream
 
+=======
+const APIURL = "http://localhost:3000/connect"
+const APIUSER = "http://localhost:3000/users/"
+>>>>>>> Stashed changes
 
 export default class App extends React.Component {
   state = {
@@ -28,6 +33,49 @@ export default class App extends React.Component {
           this.setUser(response)
       })
     }
+<<<<<<< Updated upstream
+=======
+  }
+
+  handleNextUser = (value) => {
+    if (value === 0)
+      this.setState({index: value + 1})
+    else     
+      this.setState((prevState) =>({index: prevState.index + 1}))
+  }
+
+  handleLogin = () => {
+    if (this.state.loggedIn) 
+      localStorage.token = "";
+    this.setState((prevState) =>({loggedIn: !prevState.loggedIn}))
+  }
+
+  foundMatch = () => {
+
+  }
+
+  updateUser = () => {
+
+    if(this.state.currentUser !== null) {
+      fetch(`${APIUSER}${this.state.currentUser.user.id}`)
+      .then(resp => resp.json())
+      .then (user =>{
+        this.setUser(user);
+      })
+    }
+  }
+  
+  getOtherUsers = () => {
+    fetch(APIURL)
+      .then(resp => resp.json())
+      .then(resp => {
+          const map = new Map();
+          Object.keys(resp).forEach(key => map.set(parseInt(key), resp[key]));
+          this.setState({
+            otherUsers: map
+          });
+      }) 
+>>>>>>> Stashed changes
   }
 
   setUser = (user) => {
@@ -40,11 +88,16 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
       <div className="App">
+<<<<<<< Updated upstream
       <header className="App-header">
         <NavBar currentUser={this.state.currentUser}/>
         <Header />
         <MainBody setUser={this.setUser} currentUser={this.state.currentUser}/>
       </header>
+=======
+    {this.state.loggedIn ? <NavBar currentUser={this.state.currentUser} handleLogin={this.handleLogin} loggedIn={this.state.loggedIn}/> : <Header />}
+        <MainBody foundMatch={this.foundMatch} updateUser={this.updateUser} setUser={this.setUser} currentUser={this.state.currentUser} handleNextUser={this.handleNextUser} otherUsers={this.state.otherUsers} matchIndex={this.state.index}/>
+>>>>>>> Stashed changes
     </div>
     </BrowserRouter>
   );

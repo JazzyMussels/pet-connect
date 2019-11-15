@@ -25,12 +25,21 @@ export default class MainBody extends Component {
         return(
             <Switch>
                 <Route path='/sign_up'><SignUp /></Route>
+<<<<<<< Updated upstream
                 <Route path='/profile'> {this.props.currentUser ? <Profile currentUser={this.props.currentUser}/> : <div></div>}</Route>
                 <Route path='/connect'> {this.props.currentUser ? <Connect currentUser={this.props.currentUser}/> : <div></div>}</Route>
                 <Route path='/matches'><Matches /></Route>
                 <Route path='/messages'><Messages /></Route>
                 <Route path='/settings'><Settings currentUser={this.props.currentUser}/></Route>
                 <Route path='/' render={(RouterProps) => this.props.currentUser ? RouterProps.history.push('/profile') : <Login {...RouterProps} setUser={this.props.setUser} currentUser={this.props.currentUser}/>}/>
+=======
+                <Route path='/profile' updateUser={this.props.updateUser}> {this.props.currentUser ? <Profile currentUser={this.props.currentUser}/> : <div></div>}</Route>
+                <Route path='/connect' render={RouterProps => <Connect updateUser={this.props.updateUser} foundMatch={this.props.foundMatch} {...RouterProps} currentUser={this.props.currentUser} handleNextUser={this.props.handleNextUser} otherUsers={this.props.otherUsers} matchIndex={this.props.matchIndex}/>}/>
+                <Route path='/matches' render={RouterProps => <Matches {...RouterProps} currentUserMatchees={this.props.currentUser.matchees} otherUsers={this.props.otherUsers}/>}/>
+                <Route path='/messages' render={RouterProps => <Messages {...RouterProps} currentUserMatchees={this.props.currentUser.matchees} otherUsers={this.props.otherUsers}/>}/>
+                <Route path='/settings'><Settings currentUser={this.props.currentUser}/></Route>
+                <Route exact path='/' render={(RouterProps) =>this.props.currentUser ? RouterProps.history.push('/profile') : <Login {...RouterProps} setUser={this.props.setUser} currentUser={this.props.currentUser}/>}/>
+>>>>>>> Stashed changes
             </Switch>
         )
     }

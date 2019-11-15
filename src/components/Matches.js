@@ -2,6 +2,18 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
 export default class Matches extends Component {
+<<<<<<< Updated upstream
+=======
+
+    renderMatchCards = () => {
+            return(
+                this.props.currentUserMatchees.map(match => {
+                    return <UserMatchCards matchee={this.props.otherUsers.get(match.id)}/>
+                })
+            )
+        }
+
+>>>>>>> Stashed changes
     render(){
         return(
             <div>
@@ -19,7 +31,7 @@ export default class Matches extends Component {
                 <h2>etc..</h2>
                 <br></br>
                 <Link to='/connect'>NONE OF THESE WILL DO KEEP SWIPING</Link>
-                </div>
+            </div>
         )
     }
 }

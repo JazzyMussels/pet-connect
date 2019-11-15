@@ -5,9 +5,14 @@ import MainBar from './MainBar';
 import OwnerBar from './OwnerBar';
 
 export default class Profile extends Component {
+<<<<<<< Updated upstream
 
     
     render(){
+=======
+    
+    render() {
+>>>>>>> Stashed changes
         let user = this.props.currentUser.user
         console.log(this.props.currentUser.photos)
         return(
