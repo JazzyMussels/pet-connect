@@ -12,6 +12,9 @@ const API ="http://localhost:3000/auto_login"
 =======
 const APIURL = "http://localhost:3000/connect"
 const APIUSER = "http://localhost:3000/users/"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 export default class App extends React.Component {
@@ -34,7 +37,10 @@ export default class App extends React.Component {
       })
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   }
 
   handleNextUser = (value) => {
@@ -75,6 +81,9 @@ export default class App extends React.Component {
             otherUsers: map
           });
       }) 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   }
 
@@ -97,6 +106,9 @@ export default class App extends React.Component {
 =======
     {this.state.loggedIn ? <NavBar currentUser={this.state.currentUser} handleLogin={this.handleLogin} loggedIn={this.state.loggedIn}/> : <Header />}
         <MainBody foundMatch={this.foundMatch} updateUser={this.updateUser} setUser={this.setUser} currentUser={this.state.currentUser} handleNextUser={this.handleNextUser} otherUsers={this.state.otherUsers} matchIndex={this.state.index}/>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     </div>
     </BrowserRouter>

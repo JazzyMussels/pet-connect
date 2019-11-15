@@ -6,9 +6,14 @@ import OwnerBar from './OwnerBar';
 
 export default class Profile extends Component {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     
     render(){
+=======
+    
+    render() {
+>>>>>>> Stashed changes
 =======
     
     render() {
